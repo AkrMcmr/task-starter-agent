@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>タスク開始支援エージェント</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>タスク開始支援エージェント</h1>
+            <p class="tagline">作業開始の心理的障壁を乗り越え、生産性を向上させる</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#overview">概要</a></li>
+                <li><a href="#features">機能</a></li>
+                <li><a href="#usage">使い方</a></li>
+                <li><a href="#deployment">デプロイ</a></li>
+                <li><a href="#enhancement">将来計画</a></li>
+                <li><a href="#download">ダウンロード</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section id="overview" class="container">
+            <h2>概要</h2>
+            <div class="flex-container">
+                <div class="text-content">
+                    <p>タスク開始支援エージェントは、日々のタスク管理と作業開始をサポートするLINE Botです。Obsidianで管理しているTODOリストから作業を抽出し、作業開始の声かけやファーストステップの提示を行います。</p>
+                    <p>「ベッドから出られない」「最初に取り掛かるものを決めがたい」といった心理的障壁を克服し、生産性を向上させることを目的としています。</p>
+                    <p>朝イチ、昼休み明け、夜寝る前に自動的にメッセージを送信し、タスクの優先順位付けやステップ分解を行うことで、作業開始のハードルを下げます。</p>
+                </div>
+                <div class="image-content">
+                    <img src="images/overview.png" alt="タスク開始支援エージェントの概要" class="placeholder-image">
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="container">
+            <h2>主な機能</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📢</div>
+                    <h3>作業開始の声かけ</h3>
+                    <p>朝、昼休み明け、夜寝る前に自動的にメッセージを送信し、作業開始を促します。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>ファーストステップの明示</h3>
+                    <p>タスクを小さな一歩に分解し、具体的な最初のステップを提示します。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📋</div>
+                    <h3>作業単位の分解</h3>
+                    <p>同じ粒度の作業単位に分解し、終わりが見える形で提示します。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⭐</div>
+                    <h3>優先タスクの提案</h3>
+                    <p>Obsidianのデータから優先度の高いタスクを抽出し、提案します。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Obsidian連携</h3>
+                    <p>Obsidianで管理しているTODOリストと連携し、最新のタスク情報を取得します。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>LINE連携</h3>
+                    <p>LINEをエントリーポイントとして活用し、いつでもどこでもアクセス可能です。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="usage" class="container">
+            <h2>使い方</h2>
+            <div class="usage-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>LINEボットを友だち追加</h3>
+                        <p>QRコードをスキャンして、タスク開始支援エージェントを友だちに追加します。</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>コマンドを送信</h3>
+                        <p>以下のコマンドを使って、エージェントと対話します：</p>
+                        <ul>
+                            <li><strong>「今日のタスク」</strong>：今日取り組むべきタスクの一覧を表示</li>
+                            <li><strong>「次のステップ」</strong>：現在のタスクの次のステップを表示</li>
+                            <li><strong>「朝の準備」</strong>：朝の準備ルーティンを表示</li>
+                            <li><strong>「ヘルプ」</strong>：ヘルプメッセージを表示</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>自動通知を受け取る</h3>
+                        <p>朝（デフォルト：07:00）、昼休み明け（デフォルト：13:00）、夜（デフォルト：22:00）に自動的にメッセージが届きます。</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>タスクに取り組む</h3>
+                        <p>提案されたステップに従って、タスクに取り組みます。5分だけ始めてみることで、モメンタムを形成します。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="usage-example">
+                <h3>活用例</h3>
+                <div class="example-cards">
+                    <div class="example-card">
+                        <h4>朝の活用</h4>
+                        <p>朝の通知を受け取ったら「朝の準備」コマンドを送信し、提案されたルーティンに従って一日をスタート。ベッドから出て、水を一杯飲み、カーテンを開けるところから始めます。</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>昼休み明けの活用</h4>
+                        <p>昼休み明けの通知を受け取ったら、午後に取り組むタスクを選択。「次のステップ」コマンドを送信して、具体的なステップを確認し、5分だけ取り組んでみます。</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>夜の活用</h4>
+                        <p>夜の通知を受け取ったら、一日の振り返りを行い、完了したタスクを確認。明日の優先タスクを確認し、最初に取り組むタスクを決めておきます。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="deployment" class="container">
+            <h2>デプロイ方法</h2>
+            <div class="deployment-steps">
+                <div class="deployment-step">
+                    <h3>1. LINE Botの設定</h3>
+                    <p>LINE Developersでチャネルを作成し、Messaging APIを設定します。チャネルアクセストークンとチャネルシークレットを取得し、Webhook URLを設定します。</p>
+                </div>
+                <div class="deployment-step">
+                    <h3>2. サーバーのデプロイ</h3>
+                    <p>Herokuや他のクラウドプラットフォームにアプリケーションをデプロイします。必要な環境変数を設定し、アプリケーションを起動します。</p>
+                </div>
+                <div class="deployment-step">
+                    <h3>3. Obsidianデータの連携</h3>
+                    <p>Obsidianのデータをサーバーと同期する方法を設定します。GitHub、Dropbox、Obsidian Syncなどの方法があります。</p>
+                </div>
+                <div class="deployment-step">
+                    <h3>4. 動作確認</h3>
+                    <p>LINEアプリでボットを友だちに追加し、各機能が正常に動作することを確認します。</p>
+                </div>
+            </div>
+            <div class="deployment-support">
+                <h3>デプロイサポート</h3>
+                <p>デプロイに関する詳細なサポートも提供しています。LINE Developersアカウント設定、サーバー環境構築、GitHub連携、初期運用など、各段階でのサポートが可能です。</p>
+                <a href="#download" class="button">デプロイガイドをダウンロード</a>
+            </div>
+        </section>
+
+        <section id="enhancement" class="container">
+            <h2>将来の機能強化計画</h2>
+            <div class="enhancement-roadmap">
+                <div class="roadmap-phase">
+                    <h3>フェーズ1: タスク分解機能の強化</h3>
+                    <ul>
+                        <li>自然言語処理を活用したタスク内容の理解</li>
+                        <li>タスクの種類や複雑さに応じた最適な分解パターンの適用</li>
+                        <li>過去の類似タスクからの学習と分解パターンの改善</li>
+                    </ul>
+                </div>
+                <div class="roadmap-phase">
+                    <h3>フェーズ2: GitHub Issues連携</h3>
+                    <ul>
+                        <li>ObsidianのTODOとGitHub Issuesの双方向同期</li>
+                        <li>コミット履歴とタスク進捗の連携</li>
+                        <li>プロジェクト管理機能との統合</li>
+                    </ul>
+                </div>
+                <div class="roadmap-phase">
+                    <h3>フェーズ3: 独自データベース構築</h3>
+                    <ul>
+                        <li>クラウドデータベースへの移行</li>
+                        <li>高速検索と分析機能</li>
+                        <li>データバックアップと復元機能</li>
+                    </ul>
+                </div>
+                <div class="roadmap-phase">
+                    <h3>フェーズ4: ウェブインターフェース</h3>
+                    <ul>
+                        <li>タスク管理用のウェブダッシュボード</li>
+                        <li>データ可視化とレポート機能</li>
+                        <li>カスタマイズ可能なビュー</li>
+                    </ul>
+                </div>
+                <div class="roadmap-phase">
+                    <h3>フェーズ5: タスク実行支援機能</h3>
+                    <ul>
+                        <li>メール送信、ファイル整理などの単純タスクの自動化</li>
+                        <li>APIを通じた外部サービスとの連携</li>
+                        <li>スケジュールに基づく自動実行</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="enhancement-cta">
+                <p>機能強化に関する詳細な計画も提供しています。各フェーズの実装ロードマップや優先順位についての情報が含まれています。</p>
+                <a href="#download" class="button">機能強化計画をダウンロード</a>
+            </div>
+        </section>
+
+        <section id="download" class="container">
+            <h2>ダウンロード</h2>
+            <div class="download-options">
+                <div class="download-card">
+                    <h3>ソースコード</h3>
+                    <p>タスク開始支援エージェントのソースコードをダウンロードして、自分でカスタマイズできます。</p>
+                    <a href="downloads/task_starter_agent.zip" class="button">ソースコードをダウンロード</a>
+                </div>
+                <div class="download-card">
+                    <h3>デプロイガイド</h3>
+                    <p>LINE Botの設定からサーバーのデプロイ、Obsidianデータの連携まで、詳細なデプロイ手順を提供します。</p>
+                    <a href="downloads/DEPLOY.md" class="button">デプロイガイドをダウンロード</a>
+                </div>
+                <div class="download-card">
+                    <h3>使用説明書</h3>
+                    <p>タスク開始支援エージェントの効果的な使い方、ベストプラクティス、トラブルシューティングなどを解説します。</p>
+                    <a href="downloads/USAGE.md" class="button">使用説明書をダウンロード</a>
+                </div>
+                <div class="download-card">
+                    <h3>機能強化計画</h3>
+                    <p>将来的な機能強化の計画、実装ロードマップ、優先順位などを詳細に解説します。</p>
+                    <a href="downloads/ENHANCEMENT_PLAN.md" class="button">機能強化計画をダウンロード</a>
+                </div>
+                <div class="download-card">
+                    <h3>デプロイサポート計画</h3>
+                    <p>デプロイに関するサポート内容、タイムライン、必要な情報などを詳細に解説します。</p>
+                    <a href="downloads/DEPLOYMENT_SUPPORT.md" class="button">デプロイサポート計画をダウンロード</a>
+                </div>
+                <div class="download-card">
+                    <h3>完全パッケージ</h3>
+                    <p>ソースコード、ドキュメント、計画書など、すべてのファイルをまとめたパッケージです。</p>
+                    <a href="downloads/task_starter_agent_complete.zip" class="button">完全パッケージをダウンロード</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 タスク開始支援エージェント</p>
+            <p>作業開始の心理的障壁を乗り越え、生産性を向上させるためのツール</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
